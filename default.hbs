@@ -40,8 +40,10 @@
                 {{#if @blog.logo}}<a class="brand" href="/">
                     <img src="{{@blog.logo}}" alt="{{@blog.title}}">
                 </a>{{/if}}
-                <a href="{{@blog.url}}" class="home">Blog</a>
-                {{> menu }}
+                {{^if}}
+                  <a href="{{@blog.url}}" class="home">{{@blog.title}}</a>
+                {{/if}}
+                {{!> menu }}
             </nav>
             {{! TODO: Tagline/link support }}
             {{> tagline }}
